@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var offset = 0.0
     @State var scale = 0.0
     @State var scale2 = 1.0
     @State var opacity1 = 0.0
@@ -20,7 +19,6 @@ struct ContentView: View {
     var body: some View {
         Button(action: {
             withAnimation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0)) {
-                self.offset = imageSize + spacing
                 self.scale = 1.0
                 self.scale2 = 0.0
                 self.opacity2 = 0
@@ -29,7 +27,6 @@ struct ContentView: View {
             isDisabled = true
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.offset = 0
                 self.scale = 0.0
                 self.scale2 = 1.0
                 self.opacity2 = 1
@@ -57,7 +54,6 @@ struct ContentView: View {
                     .opacity(opacity2)
             }
         }
-
         .disabled(isDisabled)
         .buttonStyle(NoTapAnimationStyle())
 
