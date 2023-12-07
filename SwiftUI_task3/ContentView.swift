@@ -13,7 +13,6 @@ struct ContentView: View {
     @State var opacity1 = 0.0
     @State var opacity2 = 1.0
     let imageSize = 24.0
-    let spacing = 0.0
     @State var isDisabled = false
 
     var body: some View {
@@ -34,7 +33,7 @@ struct ContentView: View {
                 isDisabled = false
             }
         }) {
-            HStack(spacing: spacing) {
+            HStack(spacing: 0) {
                 Image("play")
                     .resizable()
                     .renderingMode(.template)
