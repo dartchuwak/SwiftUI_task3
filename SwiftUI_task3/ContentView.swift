@@ -15,7 +15,6 @@ struct ContentView: View {
     @State var opacity2 = 1.0
     let imageSize = 24.0
     let spacing = 0.0
-    @State var anchor: UnitPoint = .leading
     @State var isDisabled = false
 
     var body: some View {
@@ -35,7 +34,6 @@ struct ContentView: View {
                 self.scale2 = 1.0
                 self.opacity2 = 1
                 self.opacity1 = 0
-                self.anchor = .leading
                 isDisabled = false
             }
         }) {
